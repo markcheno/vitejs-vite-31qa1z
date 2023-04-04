@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   import { pocketbase, errorMessage } from "./lib/pocketbase";
 
-  let email;
-  let password;
-  let loading = false;
-  let register = false;
-  let message = "";
+  let email: string;
+  let password: string;
+  let loading: boolean = false;
+  let register: boolean = false;
+  let message: string = "";
 
   const handleLogin = async () => {
     loading = true;

@@ -9,7 +9,8 @@ pocketbase.authStore.onChange(() => {
   currentUser.set(pocketbase.authStore.model);
 });
 
-export function errorMessage(error) {
-  console.error(error.message);
-  return error.message;
+export function errorMessage(error: unknown) {
+  const errorObj = error as ClientResponseError;
+  console.error(errorObj.message);
+  return errorObj.message;
 }
