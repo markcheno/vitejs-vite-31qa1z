@@ -5,11 +5,9 @@
 </script>
 
 <main>
-
 {#if !$currentUser}
   <LoginScreen />
 {:else}
   <UserScreen />
 {/if}
-
 </main>

@@ -40,45 +40,31 @@
   };
 </script>
 
-<section>
-    <form on:submit|preventDefault={handleLogin}>
-      <header>
-        <h2>Sign in to your account</h2>
-      </header>
-      <label for="email-address">Email address</label>
-      <input
+<form on:submit|preventDefault={handleLogin}>
+      <input 
+        placeholder="Email address"
         id="email-address"
         name="email"
         type="email"
         autocomplete="email"
         size="40"
         required
-        placeholder="Email address"
         bind:value={email}
-      />
-      <label for="password">Password</label>
-      <input
+      >
+      <input 
+        type="password" 
+        placeholder="Password"
         id="password"
         name="password"
-        type="password"
         autocomplete="current-password"
         size="40"
         required
-        placeholder="Password"
         bind:value={password}
-      />
-
-      {#if message}
-      <p>{message}</p>
-      {/if}
-
-      <button 
-        type="submit" 
-        disabled={loading}
       >
+      <button 
+        type="submit">
         {loading ? "Signing in...." : "Sign in"}
       </button>
-
       <button 
         type="submit" 
         disabled={loading} 
@@ -86,5 +72,7 @@
       >
         {loading && register ? "Registering...." : "Register"}
       </button>
-    </form>
- </section>
+  {#if message}
+    <p>{message}</p>
+  {/if}
+</form>

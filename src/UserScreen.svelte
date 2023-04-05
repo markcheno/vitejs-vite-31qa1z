@@ -11,9 +11,11 @@
   }
 </script>
 
-<section>
+
+<div>
   <header>{$currentUser.email}</header>
-  <button on:click={handleSignOut}>
+  <button 
+    on:click={handleSignOut}>
     Sign Out
   </button>
-</section>
+</div>
