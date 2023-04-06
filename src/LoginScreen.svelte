@@ -41,38 +41,38 @@
 </script>
 
 <form on:submit|preventDefault={handleLogin}>
-      <input 
-        placeholder="Email address"
-        id="email-address"
-        name="email"
-        type="email"
-        autocomplete="email"
-        size="40"
-        required
-        bind:value={email}
-      >
-      <input 
-        type="password" 
-        placeholder="Password"
-        id="password"
-        name="password"
-        autocomplete="current-password"
-        size="40"
-        required
-        bind:value={password}
-      >
-      <button 
-        type="submit">
-        {loading ? "Signing in...." : "Sign in"}
-      </button>
-      <button 
-        type="submit" 
-        disabled={loading} 
-        on:click={() => (register = true)}
-      >
-        {loading && register ? "Registering...." : "Register"}
-      </button>
+  <input 
+    placeholder="Email address"
+    id="email-address"
+    name="email"
+    type="email"
+    autocomplete="email"
+    size="40"
+    required
+    bind:value={email}
+  >
+  <input 
+    type="password" 
+    placeholder="Password"
+    id="password"
+    name="password"
+    autocomplete="current-password"
+    size="40"
+    required
+    bind:value={password}
+  >
+  <button 
+    type="submit">
+    {loading ? "Signing in...." : "Sign in"}
+  </button>
+  <button 
+    type="submit" 
+    disabled={loading} 
+    on:click={() => (register = true)}
+  >
+    {loading && register ? "Registering...." : "Register"}
+  </button>
   {#if message}
-    <p>{message}</p>
+  <p>{message}</p>
   {/if}
 </form>
